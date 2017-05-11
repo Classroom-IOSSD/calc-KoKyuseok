@@ -7,7 +7,7 @@ int main(){
 	int operand1, operand2, line = 0;
 	char operator = ' ';
 	float result ;
-	float (*function[])(int, int) = {add, minus, mul, div};
+	float (*function[]) (int, int) = {add, minus, mul, div};
 	
 	fp = fopen("read.txt","r");
 	if(fp!=NULL){
