@@ -5,8 +5,10 @@ int main(){
 	FILE *fp = NULL;
 	int operand1, operand2;
 	char operator = ' ';
-	int result, line = 0;
 
+	float result ;
+	float (*function[]) (int, int) = {add, minus, mul, div};
+	
 	fp = fopen("read.txt","r");
 	if(fp!=NULL){
 		fscanf(fp, "%d", &line);
