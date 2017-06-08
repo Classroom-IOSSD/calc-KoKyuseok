@@ -7,20 +7,24 @@ void my_fscanf(FILE *fp, const char *format, ...) {
 	va_start(list,format);
 	while(*format) {
 		if(*format == '%') {
-			int d = 0;
+			int d;
 			int num = 0;
+			char c;
 			format++;
 			switch (*format){
 				case 'd':
-				while (isdigit(d = getc(fp))) {
+				while (isspace(d=getc(fp))) {}
+				while (isdigit(d)) {
 					num = num*10 + d-'0';
+					d = getc(fp);
 				}
+				ungetc(d,fp);
 				*va_arg(list,int*) = num;
 				format++;
 				break;
 				case 'c':
-				*va_arg(list,char*) = getc(fp);
-				getc(fp);
+				while (isspace(c=getc(fp))) {}
+				*va_arg(list,char*) = c;
 				format++;
 				break;
 			}
