@@ -1,7 +1,7 @@
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS:%.c=%.o)
 CFLAGS = -g -Wall
-TARGET = calc
+TARGET = main
 CC = gcc
 
 all: $(TARGET)
@@ -11,5 +11,4 @@ $(TARGET): $(OBJS)
 
 clean:
 	$(RM) $(OBJS) $(TARGET)
-
 
