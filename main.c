@@ -5,7 +5,7 @@
 
 
 int main() {
-	FILE* fp = fopen("E:\\study\\calc-KoKyuseok\\points.txt", "r");
+	FILE* fp = fopen("points.txt", "r");
 	char type[10];
 	double x, y;
 	int line;
